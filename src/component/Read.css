@@ -1,0 +1,14 @@
+.readContainer{
+    padding: 50px;
+}
+button{
+    cursor: pointer;
+}
+.DialogContent{
+    text-align: center;
+}
+.home{
+   margin-top: -40px;
+   border-radius: 50%;
+   float: inline-end;
+}
