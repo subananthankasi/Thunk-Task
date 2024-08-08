@@ -1,15 +1,22 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { createUserReducer } from "./Slice/CreateSlice";
-import { readReducer } from "./Slice/ReadSlice";
-import { DeleteReducer } from "./Slice/DeleteSlice";
-import { UpdateReducer } from "./Slice/UpdateSlice";
+import { loginReducer } from "./Slice/LoginSlice";
+import { userDetailsReducer } from "./Slice/UserDetailsSlice";
+import { selectRoleReducer } from "./Slice/NewUser/SelectRoleSlice";
+import { createUserReducer } from "./Slice/NewUser/CreateUserSlice";
+import { updateGetReducer } from "./Slice/UpdateGetSlice";
+import { updateReducer } from "./Slice/UpdateSlice";
+import { userDeleteReducer } from "./Slice/UserDeleteSlice";
+
 
 
 export const store = configureStore({
     reducer:{
-      createData :createUserReducer,
-      getData:readReducer,
-      deleteData:DeleteReducer,
-      updateData:UpdateReducer
+      loginData :loginReducer,
+      userData : userDetailsReducer,
+      selectRole:selectRoleReducer,
+      createUser:createUserReducer,
+      updateGet:updateGetReducer,
+      update:updateReducer,
+      deleteData:userDeleteReducer,
     }
 })

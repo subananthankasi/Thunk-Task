@@ -1,27 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
-import {  updateThunk } from "../Thunk/UpdateGetThunk";
+import { userDeleteThunk } from "../Thunk/UserDeleteThunk";
 
-const updateSlice = createSlice({
-    name:'update',
+const userDeleteSlice = createSlice({
+    name:'delete',
     initialState : {
         loading:false,
         data:{},
         error:null
     },
     extraReducers(builder){
-        builder.addCase(updateThunk.pending ,(state,action)=>{
+        builder.addCase(userDeleteThunk.pending ,(state,action)=>{
             state.loading = true
         });
-        builder.addCase(updateThunk.fulfilled ,(state,action)=>{
+        builder.addCase(userDeleteThunk.fulfilled ,(state,action)=>{
             state.data = action.payload
             state.loading = false
-
         });
-        builder.addCase(updateThunk.rejected ,(state,action)=>{
+        builder.addCase(userDeleteThunk.rejected ,(state,action)=>{
             state.error = action.error
             state.loading = false
-
         });
     },
 });
-export const updateReducer = updateSlice.reducer
+export const userDeleteReducer = userDeleteSlice.reducer
